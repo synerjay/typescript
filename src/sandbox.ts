@@ -119,3 +119,60 @@ const minus = (a: number, b: number): number => {
 let result = minus(10, 7); // the result variable will inherit the variable type from the function it returns, in this case "number"
 
 // result = "lol" // you cannot set result to a string since the function it was initialized to returns a number
+
+// Type Aliases -- reduces type duplication and making the code more complicated
+// like having constants
+
+type StringOrNum = string | number;
+type objWithName = { name: string; uid: StringOrNum };
+
+const logDetails = (uid: StringOrNum, item: string) => {
+  console.log(`${item} has a uid of ${uid}`);
+};
+
+const greeting = (user: objWithName) => {
+  console.log(`${user.name} says hello`);
+};
+
+const greetAgain = (user: objWithName) => {
+  console.log(`${user.name} says hello`);
+};
+
+// type Calc = (a: number, b: number, c: string) => number;
+
+// let calcFunction: Calc = (a, b, c) => {
+//   console.log(c);
+//   return a + b;
+// };
+
+// calcFunction(1, 1, 'number');
+
+// Function Signatures in TypeScript
+
+// let greet: Function;
+
+// example 1
+let greetTwo: (a: string, b: string) => void; // this is a function signature
+// void means that the function is not returning anything
+
+greetTwo = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`);
+};
+
+// example 2
+let calc: (a: number, b: number, c: string) => number; // function signature
+
+calc = (numOne: number, numTwo: number, action: string) => {
+  if (action === 'add') {
+    return numOne + numTwo;
+  } else {
+    return numOne - numTwo;
+  }
+};
+
+// example 3
+let logDetailsTwo: (obj: { name: string; age: number }) => void;
+
+logDetailsTwo = (ninja: { name: string; age: number }) => {
+  console.log(`${ninja.name} is ${ninja.age} years old`);
+};

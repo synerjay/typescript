@@ -76,4 +76,41 @@ var minus = function (a, b) {
     return a + b;
 };
 var result = minus(10, 7); // the result variable will inherit the variable type from the function it returns, in this case "number"
-// result = "lol" // you cannot set result to a string since the function it was initialized to returns a number
+var logDetails = function (uid, item) {
+    console.log(item + " has a uid of " + uid);
+};
+var greeting = function (user) {
+    console.log(user.name + " says hello");
+};
+var greetAgain = function (user) {
+    console.log(user.name + " says hello");
+};
+// type Calc = (a: number, b: number, c: string) => number;
+// let calcFunction: Calc = (a, b, c) => {
+//   console.log(c);
+//   return a + b;
+// };
+// calcFunction(1, 1, 'number');
+// Function Signatures in TypeScript
+// let greet: Function;
+// example 1
+var greetTwo; // this is a function signature
+// void means that the function is not returning anything
+greetTwo = function (name, greeting) {
+    console.log(name + " says " + greeting);
+};
+// example 2
+var calc; // function signature
+calc = function (numOne, numTwo, action) {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
+};
+// example 3
+var logDetailsTwo;
+logDetailsTwo = function (ninja) {
+    console.log(ninja.name + " is " + ninja.age + " years old");
+};
