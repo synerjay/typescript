@@ -155,14 +155,14 @@ const greetAgain = (user: objWithName) => {
 let greetTwo: (a: string, b: string) => void; // this is a function signature
 // void means that the function is not returning anything
 
-greetTwo = (name: string, greeting: string) => {
+greetTwo = (name, greeting) => {
   console.log(`${name} says ${greeting}`);
 };
 
 // example 2
 let calc: (a: number, b: number, c: string) => number; // function signature
 
-calc = (numOne: number, numTwo: number, action: string) => {
+calc = (numOne, numTwo, action) => {
   if (action === 'add') {
     return numOne + numTwo;
   } else {
@@ -173,6 +173,8 @@ calc = (numOne: number, numTwo: number, action: string) => {
 // example 3
 let logDetailsTwo: (obj: { name: string; age: number }) => void;
 
-logDetailsTwo = (ninja: { name: string; age: number }) => {
+logDetailsTwo = (ninja) => {
   console.log(`${ninja.name} is ${ninja.age} years old`);
 };
+
+logDetailsTwo({ name: 'Ryan', age: 2 });
