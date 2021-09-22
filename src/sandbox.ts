@@ -98,3 +98,24 @@ let ninjaObject: { name: any; age: any };
 ninjaObject = { name: 'yoshi', age: 25 };
 
 console.log('test');
+
+let greet: Function; // function is with a capital
+
+greet = () => {
+  console.log('Hello Again');
+};
+
+const add = (a: number, b: number, c: number | string = 10) => {
+  console.log(a + b);
+  console.log(c);
+};
+
+add(5, 10, '20');
+
+const minus = (a: number, b: number): number => {
+  return a + b;
+};
+
+let result = minus(10, 7); // the result variable will inherit the variable type from the function it returns, in this case "number"
+
+// result = "lol" // you cannot set result to a string since the function it was initialized to returns a number

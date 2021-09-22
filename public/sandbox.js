@@ -62,3 +62,18 @@ mixed.push(false);
 var ninjaObject;
 ninjaObject = { name: 'yoshi', age: 25 };
 console.log('test');
+var greet; // function is with a capital
+greet = function () {
+    console.log('Hello Again');
+};
+var add = function (a, b, c) {
+    if (c === void 0) { c = 10; }
+    console.log(a + b);
+    console.log(c);
+};
+add(5, 10, '20');
+var minus = function (a, b) {
+    return a + b;
+};
+var result = minus(10, 7); // the result variable will inherit the variable type from the function it returns, in this case "number"
+// result = "lol" // you cannot set result to a string since the function it was initialized to returns a number
