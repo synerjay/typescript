@@ -53,7 +53,7 @@ ninja = {
 // Explicit Types
 
 let character: string; //initialize but no value yet but type is explicitly typed
-let age: number;
+// let age: number;
 let isLoggedIn: boolean;
 
 // arrays
@@ -84,3 +84,17 @@ let ninjaTwo: {
 };
 
 ninjaTwo = { name: 'Mario', age: 20, beltColour: 'black' };
+
+let age: any = 25;
+
+let mixedArray: any[] = [];
+
+mixed.push(5);
+mixed.push('mario');
+mixed.push(false);
+
+let ninjaObject: { name: any; age: any };
+
+ninjaObject = { name: 'yoshi', age: 25 };
+
+console.log('test');

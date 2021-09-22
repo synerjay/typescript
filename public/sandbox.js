@@ -1,3 +1,4 @@
+"use strict";
 // let character = 'mario';
 // let age = 30;
 var isBlackBelt = false;
@@ -21,7 +22,7 @@ numbers.push(25);
 var ninja = {
     name: 'Mario',
     belt: 'black',
-    age: 30
+    age: 30,
 };
 ninja.age = 40;
 ninja.name = 'Ryu';
@@ -30,12 +31,12 @@ ninja.name = 'Ryu';
 ninja = {
     name: 'yoshi',
     belt: 'orange',
-    age: 40
+    age: 40,
 };
 // Conclusion: Typescript is a strict biatch
 // Explicit Types
 var character; //initialize but no value yet but type is explicitly typed
-var age;
+// let age: number;
 var isLoggedIn;
 // arrays
 var ninjas = [];
@@ -53,3 +54,11 @@ ninjaOne = { name: 'yoshi', age: 30 };
 ninjaOne = [];
 var ninjaTwo;
 ninjaTwo = { name: 'Mario', age: 20, beltColour: 'black' };
+var age = 25;
+var mixedArray = [];
+mixed.push(5);
+mixed.push('mario');
+mixed.push(false);
+var ninjaObject;
+ninjaObject = { name: 'yoshi', age: 25 };
+console.log('test');
