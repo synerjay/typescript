@@ -69,7 +69,7 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 
 //list template instance
 const ul = document.querySelector('ul')!;
-const list = new ListTemplate(ul);
+const list = new ListTemplate(ul); // this ListTemplate constructor accepts a ul element as its argument
 
 form.addEventListener('submit', (e: Event) => {
   // the event type is a built-in TS type that tells TS that e is an event variable
