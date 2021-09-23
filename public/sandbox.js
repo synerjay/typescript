@@ -1,16 +1,16 @@
 "use strict";
 // let character = 'mario';
 // let age = 30;
-var isBlackBelt = false;
+let isBlackBelt = false;
 // age = 31;
-var circ = function (diameter) {
+const circ = (diameter) => {
     return diameter * Math.PI;
 };
 console.log(circ(20));
 // arrays
-var names = ['luigi', 'mario', 'yoshi'];
+let names = ['luigi', 'mario', 'yoshi'];
 names.push('toad');
-var numbers = [10, 20, 30, 40];
+let numbers = [10, 20, 30, 40];
 numbers.push(25);
 // numbers.push('shaun')
 // numbers[1] = 'shaun'
@@ -19,7 +19,7 @@ numbers.push(25);
 // mixed.push(10);
 // mixed[0] = 3;
 // objects
-var ninja = {
+let ninja = {
     name: 'Mario',
     belt: 'black',
     age: 30,
@@ -35,54 +35,54 @@ ninja = {
 };
 // Conclusion: Typescript is a strict biatch
 // Explicit Types
-var character; //initialize but no value yet but type is explicitly typed
+let character; //initialize but no value yet but type is explicitly typed
 // let age: number;
-var isLoggedIn;
+let isLoggedIn;
 // arrays
-var ninjas = [];
+let ninjas = [];
 ninjas.push('shaun');
 //union types - are types that can be either in the selection
-var mixed = []; // explicitly declaring the type of array in the mixed variable
+let mixed = []; // explicitly declaring the type of array in the mixed variable
 mixed.push('hello');
 mixed.push(20);
 mixed.push(false);
-var uid;
+let uid;
 uid = '123';
 uid = 123;
-var ninjaOne;
+let ninjaOne;
 ninjaOne = { name: 'yoshi', age: 30 };
 ninjaOne = [];
-var ninjaTwo;
+let ninjaTwo;
 ninjaTwo = { name: 'Mario', age: 20, beltColour: 'black' };
-var age = 25;
-var mixedArray = [];
+let age = 25;
+let mixedArray = [];
 mixed.push(5);
 mixed.push('mario');
 mixed.push(false);
-var ninjaObject;
+let ninjaObject;
 ninjaObject = { name: 'yoshi', age: 25 };
 console.log('test');
-var greet; // function is with a capital
-greet = function () {
+let greet; // function is with a capital
+greet = () => {
     console.log('Hello Again');
 };
-var add = function (a, b, c) {
+const add = (a, b, c) => {
     console.log(a + b);
     console.log(c);
 };
 add(5, 10, '20');
-var minus = function (a, b) {
+const minus = (a, b) => {
     return a + b;
 };
-var result = minus(10, 7); // the result variable will inherit the variable type from the function it returns, in this case "number"
-var logDetails = function (uid, item) {
-    console.log(item + " has a uid of " + uid);
+let result = minus(10, 7); // the result variable will inherit the variable type from the function it returns, in this case "number"
+const logDetails = (uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
 };
-var greeting = function (user) {
-    console.log(user.name + " says hello");
+const greeting = (user) => {
+    console.log(`${user.name} says hello`);
 };
-var greetAgain = function (user) {
-    console.log(user.name + " says hello");
+const greetAgain = (user) => {
+    console.log(`${user.name} says hello`);
 };
 // type Calc = (a: number, b: number, c: string) => number;
 // let calcFunction: Calc = (a, b, c) => {
@@ -93,14 +93,14 @@ var greetAgain = function (user) {
 // Function Signatures in TypeScript
 // let greet: Function;
 // example 1
-var greetTwo; // this is a function signature
+let greetTwo; // this is a function signature
 // void means that the function is not returning anything
-greetTwo = function (name, greeting) {
-    console.log(name + " says " + greeting);
+greetTwo = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
 };
 // example 2
-var calc; // function signature
-calc = function (numOne, numTwo, action) {
+let calc; // function signature
+calc = (numOne, numTwo, action) => {
     if (action === 'add') {
         return numOne + numTwo;
     }
@@ -109,8 +109,8 @@ calc = function (numOne, numTwo, action) {
     }
 };
 // example 3
-var logDetailsTwo;
-logDetailsTwo = function (ninja) {
-    console.log(ninja.name + " is " + ninja.age + " years old");
+let logDetailsTwo;
+logDetailsTwo = (ninja) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`);
 };
 logDetailsTwo({ name: 'Ryan', age: 2 });
