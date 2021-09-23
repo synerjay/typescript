@@ -1,4 +1,17 @@
 import { Invoice } from './classes/Invoice.js'; // the file extension must be js, and not a ts!! Because at the end of the day we are compiling to these to a JS file!
+import { Payment } from './classes/Payment.js';
+import { HasFormatter } from './interfaces/HasFormatter.js'; // import interface
+
+// let docOne: HasFormatter; // tells TS that this variable should be an object with a formatter method
+// let docTwo: HasFormatter;
+
+// docOne = new Invoice('yoshi', 'web work', 250);
+// docTwo = new Payment('yoshi', 'plumbing', 200);
+
+// you can also check an array of objects which each object has a formatter method
+// let docs: HasFormatter[] = [];
+// docs.push(docOne);
+// docs.push(docTwo);
 
 // interfaces
 
