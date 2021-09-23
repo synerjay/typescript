@@ -13,7 +13,7 @@ import { HasFormatter } from './interfaces/HasFormatter.js'; // import interface
 // docs.push(docOne);
 // docs.push(docTwo);
 
-// interfaces
+// Interface Examples
 
 interface IsPerson {
   name: string;
@@ -70,5 +70,11 @@ form.addEventListener('submit', (e: Event) => {
   // the event type is a built-in TS type that tells TS that e is an event variable
   e.preventDefault();
 
-  console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+  let doc: HasFormatter; // this variable should follow the HasFormatter interface
+  if (type.value === 'invoice') {
+    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+  } else {
+    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+  }
+  console.log(doc);
 });

@@ -1,4 +1,5 @@
 import { Invoice } from './classes/Invoice.js'; // the file extension must be js, and not a ts!! Because at the end of the day we are compiling to these to a JS file!
+import { Payment } from './classes/Payment.js';
 const me = {
     name: 'shaun',
     //age: 30,
@@ -35,5 +36,12 @@ const amount = document.querySelector('#amount');
 form.addEventListener('submit', (e) => {
     // the event type is a built-in TS type that tells TS that e is an event variable
     e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+    let doc; // this variable should follow the HasFormatter interface
+    if (type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc);
 });
