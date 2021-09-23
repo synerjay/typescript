@@ -1,4 +1,5 @@
 import { Invoice } from './classes/Invoice.js'; // the file extension must be js, and not a ts!! Because at the end of the day we are compiling to these to a JS file!
+import { ListTemplate } from './classes/ListTemplate.js';
 import { Payment } from './classes/Payment.js';
 import { HasFormatter } from './interfaces/HasFormatter.js'; // import interface
 
@@ -66,6 +67,10 @@ const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
 const details = document.querySelector('#details') as HTMLInputElement;
 const amount = document.querySelector('#amount') as HTMLInputElement;
 
+//list template instance
+const ul = document.querySelector('ul')!;
+const list = new ListTemplate(ul);
+
 form.addEventListener('submit', (e: Event) => {
   // the event type is a built-in TS type that tells TS that e is an event variable
   e.preventDefault();
@@ -76,5 +81,5 @@ form.addEventListener('submit', (e: Event) => {
   } else {
     doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
   }
-  console.log(doc);
+  list.render(doc, type.value, 'end');
 });
