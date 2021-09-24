@@ -60,14 +60,21 @@ const addUID = (obj) => {
 };
 let docOne = addUID({ name: 'yoshi', age: 40 });
 console.log(docOne.name);
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["PERSON"] = 1] = "PERSON";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["SHOPPINGLIST"] = 3] = "SHOPPINGLIST";
+})(ResourceType || (ResourceType = {}));
 const docThree = {
     uid: 1,
-    resourceName: 'person',
+    resourceName: ResourceType.PERSON,
     data: { name: 'shaun' },
 };
 const docFour = {
     uid: 1,
-    resourceName: 'shoppingList',
+    resourceName: ResourceType.SHOPPINGLIST,
     data: ['bread', 'milk'],
 };
 console.log(docThree, docFour);
