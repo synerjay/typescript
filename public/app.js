@@ -40,12 +40,15 @@ const list = new ListTemplate(ul); // this ListTemplate constructor accepts a ul
 form.addEventListener('submit', (e) => {
     // the event type is a built-in TS type that tells TS that e is an event variable
     e.preventDefault();
+    //Tuples:
+    let values;
+    values = [tofrom.value, details.value, amount.valueAsNumber];
     let doc; // this variable should follow the HasFormatter interface
     if (type.value === 'invoice') {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     list.render(doc, type.value, 'end');
 });
